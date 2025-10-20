@@ -81,7 +81,8 @@ db.products.insertMany([
   }
 ])
   
-3.1 inserimento utente con _id personalizzato
+3.1 INSERIMENTO DI UTENTE CON ID PERSONALIZZATO
+
 db.users.insertOne({
   _id: "user_custom_001",
   name: "Test User",
