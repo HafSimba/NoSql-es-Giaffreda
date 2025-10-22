@@ -98,5 +98,41 @@ db.users.insertOne({
 })
 MongoServerError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: "user_custom_001" }
 
-3.2
+3.2 INSERIMENTO DI UTENTE SENZA ID 
+
+db.users.insertOne({
+  name: "Auto ID User",
+  email: "auto.id@example.com"
+})
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('68f88496b899716db15d9772')
+}
+
+4.1 INSERIMENTO DI DOCUMENTI CON VARI TIPI
+
+db.products.insertOne({
+  SKU: "TEST-TYPES-001",                  // String
+  name: "Data Types Demo Product",       // String
+  price: 99.99,                          // Number (Double) — usa literal oppure NumberDecimal("99.99")
+  quantity: NumberInt(100),              // Number (Integer) — o semplicemente 100
+  inStock: true,                         // Boolean
+  tags: ["demo", "test"],                // Array
+  dimensions: {                          // Object
+    length: 10.5,
+    width: 5.25,
+    height: 2.0
+  },
+  releaseDate: new Date("2024-01-15T00:00:00Z"), // Date
+  metadata: null                          // Null
+})
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('68f88593b899716db15d9773')
+}
+
+
+
 
