@@ -1,9 +1,11 @@
 import "dotenv/config.js";
 import { esercizio01 } from './exercises/lesson-02/01-projections-base.js';
+import { esercizio02 } from './exercises/lesson-02/02-projections-nested.js';
 
 const main = async () => {
   try {
-    await esercizio01();
+  await esercizio01();
+  await esercizio02();
   } catch (error) {
     console.error('Errore durante l\'esecuzione dell\'esercizio:', error);
   } finally {
