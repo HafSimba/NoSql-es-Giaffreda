@@ -3,6 +3,7 @@ import { esercizio01 } from './exercises/lesson-02/01-projections-base.js';
 import { esercizio02 } from './exercises/lesson-02/02-projections-nested.js';
 import { esercizio03 } from './exercises/lesson-02/03-sorting-base.js';
 import { esercizio04 } from './exercises/lesson-02/04-sorting-pagination.js';
+import { esercizio05 } from './exercises/lesson-02/05-aggregation-match-project.js';
 
 const main = async () => {
   try {
@@ -10,6 +11,7 @@ const main = async () => {
   await esercizio02();
   await esercizio03();
   await esercizio04();
+  await esercizio05();
   } catch (error) {
     console.error('Errore durante l\'esecuzione dell\'esercizio:', error);
   } finally {
