@@ -19,6 +19,9 @@ import { esercizio04 as esercizioFinale10 } from './exercises/Esercitazione-Fina
 import { esercizio01 as esercizioFinale11 } from './exercises/Esercitazione-Finale/feature-4-Sistemadiraccomandazioni/01-similar-movies.js';
 import { esercizio02 as esercizioFinale12 } from './exercises/Esercitazione-Finale/feature-4-Sistemadiraccomandazioni/02-personalized-recommendations.js';
 import { esercizio03 as esercizioFinale13 } from './exercises/Esercitazione-Finale/feature-4-Sistemadiraccomandazioni/03-hidden-gems.js';
+import { esercizio01 as esercizioFinale14 } from './exercises/Esercitazione-Finale/feature-5-Performance/01-optimize-queries.js';
+import { esercizio02 as esercizioFinale15 } from './exercises/Esercitazione-Finale/feature-5-Performance/02-covered-query.js';
+ 
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -45,6 +48,8 @@ const mostraMenu = () => {
   console.log(' 12. Film Simili (Recommendations)');
   console.log(' 13. Raccomandazioni Personalizzate');
   console.log(' 14. Gemme Nascoste');
+  console.log(' 15. Ottimizzazioni Performance (Query lente)');
+  console.log(' 16. Covered Query Challenge');
   console.log('\nALTRO');
   console.log('  7. Esegui tutti gli esercizi');
   console.log('  0. Esci');
@@ -58,6 +63,14 @@ const eseguiEsercizio = async (scelta: string) => {
     case '1':
       console.log('>>> Esercizio 1.1: Ricerca Base per Titolo\n');
       await esercizioFinale01();
+      break;
+    case '15':
+      console.log('>>> Esercizio 5.1: Ottimizzazione Query Lente\\n');
+      await esercizioFinale14();
+      break;
+    case '16':
+      console.log('>>> Esercizio 5.2: Covered Query Challenge\\n');
+      await esercizioFinale15();
       break;
     case '2':
       console.log('>>> Esercizio 1.2: Filtri Avanzati\n');
@@ -125,6 +138,8 @@ const eseguiEsercizio = async (scelta: string) => {
   await esercizioFinale11();
   await esercizioFinale12();
   await esercizioFinale13();
+  await esercizioFinale14();
+  await esercizioFinale15();
       break;
     case '0':
       console.log('Uscita...');
@@ -138,7 +153,7 @@ const eseguiEsercizio = async (scelta: string) => {
 
 const chiediScelta = () => {
   mostraMenu();
-  rl.question('\nScegli un esercizio (0-14): ', async (scelta) => {
+  rl.question('\nScegli un esercizio (0-16): ', async (scelta) => {
     await eseguiEsercizio(scelta.trim());
     
     if (scelta.trim() !== '0') {
